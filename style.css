@@ -1,0 +1,331 @@
+    /* Global styles */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root{
+    --light-blue: #def3fc;
+    --most-common-position: center;
+    --yellow: #f9d200;
+    --green1: #20613d;
+    --green2: #246d45;
+
+    --blue-gradient: linear-gradient(180deg, rgb(171, 233, 255) 0%, rgb(94, 193, 255) 100%, rgb(50, 192, 223) 100%);
+    --blue-1:#0089be;
+    --blue-2: #00b9ff;
+    --blue-3:#5199c5;
+    --white: white;
+    --green-gradient: linear-gradient(to right,#243c22 ,#2f7d37);
+    --box-background: rgba( 255, 255, 255, 0.6 );
+    --box-shadow: 0 8px 32px 0 rgba(31, 135, 93, 0.37);
+    --box-blur: blur( 7.5px );
+    --box-blur-2: blur( 7.5px );
+    --box-border:  1px solid rgba( 255, 255, 255, 0.18 );
+  }
+  
+  body {
+    font-family: 'Noto Sans', sans-serif;
+  }
+
+  html{
+    scroll-behavior: smooth;
+}
+
+    /* That is the navbar. It's called Header in Tacyons css */
+
+header{
+  z-index: 3;
+  background-color: var(--blue-1);
+}
+/* The paintbrush line SVG that underlines titles of sections NOT THE HERO ONE */
+.paintbrush-line {
+  width: 100%;
+  height:  10px;
+  display: block;
+  margin-top: 1px; /* Adjust this value to control the spacing between "About" and the paintbrush line */
+}
+
+    /* Style when hero text is underlined in yellow */
+
+
+.underline-paintbrush {
+    position: relative;
+    display: inline-block;
+  }
+
+
+  #about p{
+    font-size: 1em;
+  }
+  
+
+  .underline-paintbrush::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--yellow);
+    transform: skewX(-50deg);
+  }
+
+    /* DONT REMOVE! */
+
+  .txt-type > .txt {
+    border-right: 0.2rem solid #777;
+  }
+  
+    /* Style the hero section */
+
+  
+  .hero {
+    background-color: var(--light-blue);
+    display: flex;
+    justify-content: var(--most-common-position);
+    align-items: var(--most-common-position);
+    height: 100vh;
+    position: relative;
+  }
+    /* Style the background of the hero section */
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.newtimes.co.rw/uploads/imported_images/files/main/articles/2022/05/19/different_designs_of_imigongo_for_sale_at_imigongo_art_centre_located_in_kayonza_district_._photo_by_willy_mucyo.jpg");
+    opacity: 15%; 
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: cover;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+padding: 1em;  }
+  
+    /* Style the hero title and subtitle */
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .hero-title{
+    font-size: 1.2em;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1em;
+    font-weight: 500;
+    padding-bottom: 1em;
+  }
+
+    /* Most used button. In hero section and art products section */
+
+  
+  a.view-art{
+    background-color: var(--green1);
+    text-decoration: none;
+    padding: 14px 15px;
+    display: inline-block;
+   }
+   a.view-art:hover{
+    background-color: var(--green2);
+    transition: transform 0.2s ease-in-out;
+    transform: scale(0.9); 
+  }
+
+  
+  /* make the button the width of the text and not bigger */
+  a {
+    width: fit-content;
+  }
+  
+  /* media queries for hero section */
+  @media (max-width: 768px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero-text {
+      animation: none;
+      text-align: var(--most-common-position);
+    }
+  
+    .hero-image {
+      justify-content: var(--most-common-position);
+      animation: none;
+      padding-top: 20px;
+    }
+  
+    a {
+        margin-top: 20px;
+        margin-left: auto; 
+        margin-right: auto; 
+      }
+
+     
+  }
+
+/* About section */
+  .about{
+    background: var(--green-gradient);
+
+}
+ /* Art products section */
+ 
+  .art{
+background: var(--blue-gradient);
+
+  }
+
+  .artwork-card{
+background: var(--white);
+
+  }
+
+/* The Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  padding-top: 5em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #bbb;
+}
+
+
+ /* Styles for contact section*/
+
+ .contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 1em;
+  background: var(--green-gradient);
+}
+
+.contact-form {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 5px;
+  
+  
+}
+
+.contact-form h1 {
+  
+  text-align: center;
+}
+
+.contact-form p {
+  
+line-height: normal;}
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+
+      /* Email and what's app at the bottom*/
+
+
+.contact-bottom{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.icon-bottom {
+display: inline-block;
+padding: 2em;
+border-radius: 50%;
+}
+
+
+
+.icon-bottom a {
+color: var(--white);
+text-decoration: none;
+}
+
+.icon-bottom i {
+font-size: 28px;
+}
+
+.footer{
+text-align: center;
+}
+
+      /* Media query for contact section*/
+
+
+@media (max-width: 767px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-details {
+    text-align: center;
+  }
+}
+
+
+.waiting{
+  display: none;
+}
+
+
+
+
