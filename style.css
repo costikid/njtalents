@@ -277,6 +277,20 @@ textarea {
   resize: vertical;
 }
 
+.submit-btn{
+  background-color: var(--green1);
+    text-decoration: none;
+    padding: 14px 15px;
+    display: inline-block;
+    color: var(--white);
+    border: none;
+}
+
+.submit-btn:hover{
+  background-color:var(--green2);
+    transition: transform 0.2s ease-in-out;
+    transform: scale(0.9); }
+
 
       /* Email and what's app at the bottom*/
 
