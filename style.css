@@ -232,8 +232,9 @@ background: var(--white);
   color: #bbb;
 }
 
-#kigali a{
-    text-decoration: none;} 
+.phone-text{
+    text-decoration: none;
+text-align:center;} 
 
 
  /* Styles for contact section*/
