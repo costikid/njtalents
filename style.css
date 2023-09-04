@@ -13,7 +13,6 @@
     --yellow: #f9d200;
     --green1: #20613d;
     --green2: #246d45;
-   
 
     --blue-gradient: linear-gradient(180deg, rgb(171, 233, 255) 0%, rgb(94, 193, 255) 100%, rgb(50, 192, 223) 100%);
     --blue-1:#0089be;
@@ -21,11 +20,7 @@
     --blue-3:#5199c5;
     --white: white;
     --green-gradient: linear-gradient(to right,#243c22 ,#2f7d37);
-    --box-background: rgba( 255, 255, 255, 0.6 );
-    --box-shadow: 0 8px 32px 0 rgba(31, 135, 93, 0.37);
-    --box-blur: blur( 7.5px );
-    --box-blur-2: blur( 7.5px );
-    --box-border:  1px solid rgba( 255, 255, 255, 0.18 );
+    
   }
   
   body {
@@ -233,10 +228,6 @@ background: var(--white);
   color: #bbb;
 }
 
-.phone-text{
-    text-decoration: none;
-text-align:center;} 
-
 
  /* Styles for contact section*/
 
@@ -345,6 +336,22 @@ text-align: center;
   display: none;
 }
 
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 100% of the viewport height */
+  background-color: var(--green1);
+  padding: 2em; /* Background color for the container */
+}
+
+/* Style the video */
+video {
+  max-width: 100%; /* Ensure the video doesn't exceed its container's width */
+  max-height: 100%; 
+  box-shadow: var(--box-blur-2);/* Ensure the video doesn't exceed its container's height */
+}
 
 
 
