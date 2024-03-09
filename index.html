@@ -410,6 +410,19 @@
       </p>
       <p class="tc white">Website designed by <a target="_blank" class="link white underline" href="https://devkenya.com">DevKenya</a></p>
     <script src="script.js"></script>
+          <script>
+// Replace 'YOUR_FASTAPI_ENDPOINT' with the actual URL of your FastAPI endpoint
+const fastApiEndpoint = 'http://localhost:8000/track_visitor';
+
+// Send a POST request to the FastAPI server when the page is loaded
+fetch(fastApiEndpoint, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ page: window.location.href }),
+});
+</script>
 </body>
 </head>
 </html>
